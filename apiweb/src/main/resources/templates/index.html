@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Angular JS</title>
+		
+		<script>
+		//<![CDATA[
+		function carregarDados(){
+			 var xhttp = new XMLHttpRequest();
+			  xhttp.onreadystatechange = function() {
+			    if (xhttp.readyState == 4 && xhttp.status == 200) {
+			     document.getElementById("demo").innerHTML = xhttp.responseText;
+			    }
+			  };
+			  xhttp.open("GET", "http://localhost:8080/cliente", true);
+			  xhttp.send();
+		}
+		//]]>
+		</script>
+	</head>
+	
+	<button type="button" value="Carregar" onclick="carregarDados()">Carregar</button>
+	<body>
+		<div id="demo">
+		</div>
+	</body>
+
+</html>
